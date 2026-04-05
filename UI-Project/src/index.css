@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+#right {
+  scroll-behavior: smooth;
+
+  /* Enable smooth horizontal scrolling */
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  /* Scroll snap for card-by-card animation */
+  scroll-snap-type: x mandatory;
+
+  /* Hide scrollbar (modern look) */
+  scrollbar-width: none; /* Firefox */
+}
+
+#right::-webkit-scrollbar {
+  display: none; /* Chrome, Edge, Safari */
+}
+
+/* Each card snap animation */
+#right > * {
+  scroll-snap-align: start;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Subtle animation while scrolling */
+#right > *:hover {
+  transform: translateY(-6px);
+}
